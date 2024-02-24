@@ -1,0 +1,11 @@
+{
+  "name": "local-api",
+  "version": "1.0.0",
+  "description": "This is a local api created using npm's json server;",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server restaurants.json"
+  },
+  "author": "",
+  "license": "ISC"
+}
