@@ -27,61 +27,46 @@
 <body>               <!--body tag: there can only be one per html file and shows the items on the website-->
 
     <header> <!--Semantic element. header usually encompasses the starting sentence-->
-        <h1 id="main-title">Urbana-Champaign, UIUC Restaurants Information Page</h1>
+        <h1 id="main-title">Text Summarizer</h1>
     </header>
         
 
+    <section id='main'> <!--Semantic element-->            
+        <p>This is a search result summarizer for different reading levels
+        This allows the user to filter out search result. 
+        </p>
 
-    <section id='main'> <!--Semantic element-->    
+        <h3>Select the desired reading level and  the number of results to display</h1>
         
-        <p>This website provides information about restaurants that are around the Urbana-Champaign area and close to UIUC (the University of Illinois at Urbana-Champaign).</p>
-        <h1>Search for restaurants by typing in a restaurant's name or cuisine type<br>
-        Click a restaurant for detailed info</h1>
+
+        <SELECT id="reading-level">
+            
+            <OPTION Value="Basic">Basic Knowledge</OPTION>
+            <OPTION Value="Intermediate">Intermediate</OPTION>
+            <OPTION Value="Advanced">Research Level</OPTION>
+            
+        </SELECT>
+
+        <SELECT id="results-per-page">
+            <OPTION Value="5">5</OPTION>
+            <OPTION Value="20">20</OPTION>
+            <OPTION Value="100">100</OPTION>
+        </SELECT>            
+
+        <h3>Search a result</h1>
         
+
         <div class='search-input'>
-            <label for='search-bar'>Search:</label>
-            <input type='text' name='search' id='search-bar' placeholder="search here..."> <!--search bar input-->
+            <label for='search-bar'>Enter</label>
+            <input type='text' name='search' id='search-bar' placeholder="search here..." onkeydown="handleEnter(event)"> <!--search bar input-->
         </div>
+
+        
         <div id="search-results"></div> <!--search results to be linked-->
         <div id="detailed-results"></div> <!--detailed results displayed whenever a search element is clicked:-->
         <!--search and link to a database of restaurants (simplified using a csv file) is established using code involving javascript and json-->
     </section>
 
-
-
-    <article id="more-info">
-        <h2 class="centered">More Info</h2>
-
-        <div id="list">    
-            <p><Strong>List of restaurants by cuisine type</Strong></p>
-            <ul>
-                <li><a>Indian</a></li>
-                <li><a>Chinese</a></li>
-                <li><a>Japanese</a></li>
-                <li><a>Italian</a></li>
-                <li><a>Fast Food</a></li>
-                <li><a>Pizza</a></li>
-            </ul>
-
-        </div>
-
-        <div id="scene">    
-            <p><Strong>About the Urbana Champaign Restaurant scene:</Strong></p>
-            <p> In the <a href="Champaign–Urbana metropolitan area">Urbana-Champaign area</a>, there is a wide variety of cuisine available from various types of Asian food such as Indian, Korean, and Chinese 
-            to Italian food, and many large American food chains. The large seasonal population of students of the large UIUC university, along with the many employees of the univesity
-            supports many restaurants and leads to this diversity of restaurants. Perhaps unsuprisingly, the Urbana-Champaign area was named as <em>Midwest Living’s</em> “<a href="https://www.midwestliving.com/travel/the-greatest-midwest-food-towns/">Greatest Midwest Food Town</a>” in 2017, with the area's diversity of cuisine, food trucks, 
-            and prevalence of locally grown food ingredients used in restaurants all being cited. 
-            </p>
-        </div>
-
-    </article>
-
-    <section id="contact">
-        Don't see a restaurant on this website that's in Urbana-Champaign?
-        Contact this email: <strong>maxdj2@illinois.edu</strong>
-    </section>
-    
-    
 
     <script src="getData.js"></script>
     <script src="main.js"></script>

@@ -1,19 +1,38 @@
 const search_bar = document.getElementById("search-bar"); //get the input search element
+const search_button = document.getElementById("search");
+
 const results_section = document.getElementById("search-results"); //get the section to populate with the search results
 const detailed_results_section = document.getElementById("detailed-results");
+const reading_level_option_button = document.getElementById("reading-level");
+const results_per_page_field = document.getElementById("results-per-page");
+
+var results_per_page = 10;
 
 //get the search string and call the function to display a list of restaurants.
-search_bar.addEventListener('keyup', (e) => {
-    let searchString = e.target.value; //returns the value put into the search string
-    //if the searchString is empty, call the clear function
-    if (searchString.length === 0) {
-        clearAll();
-    } else {
-        displayResults(searchString); //passes in the function into the display results part
+// search_bar.addEventListener("keypress", function(event) {
+//     if (event.key == "Enter") {
+//         console.log("Enter pressed");
+//         let searchString = e.target.value;
+//         // call google search API
+//         //search_button.click();
+//     }
+//     // let searchString = e.target.value; //returns the value put into the search string
+//     // //if the searchString is empty, call the clear function
+//     // if (searchString.length === 0) {
+//     //     clearAll();
+//     // } else {
+//     //     displayResults(searchString); //passes in the function into the display results part
+//     // }
+// });
+
+function handleEnter(event) {
+    if(event.key == "Enter") {
+        console.log("Enter")
     }
-    
-    
-});
+}
+
+
+//results_per_page_field.addEventListener()
 
 //function calls that adds calls function to display the research and to add key event listeners.
 const displayResults = (searchString) => {
