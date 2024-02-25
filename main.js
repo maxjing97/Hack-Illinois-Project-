@@ -8,29 +8,32 @@ const results_per_page_field = document.getElementById("results-per-page");
 
 var results_per_page = 10;
 
-//get the search string and call the function to display a list of restaurants.
-// search_bar.addEventListener("keypress", function(event) {
-//     if (event.key == "Enter") {
-//         console.log("Enter pressed");
-//         let searchString = e.target.value;
-//         // call google search API
-//         //search_button.click();
-//     }
-//     // let searchString = e.target.value; //returns the value put into the search string
-//     // //if the searchString is empty, call the clear function
-//     // if (searchString.length === 0) {
-//     //     clearAll();
-//     // } else {
-//     //     displayResults(searchString); //passes in the function into the display results part
-//     // }
-// });
+import {search} from "./getData";
 
+//function for the search bar
 function handleEnter(event) {
+    let searchString = event.target.value; //returns the value put into the search string
     if(event.key == "Enter") {
-        console.log("Enter")
+        initial_search_results = search(searchString)
+        console.log("string searched: " + searchString);
+        //console.log("raw results"+intial_search_results)
     }
 }
 
+//function for the reading level option
+function handleReadingOptions(event) {
+    var dropdown = document.getElementById("reading-level")
+    var reading_option = dropdown.options[dropdown.selectedIndex].value
+
+    console.log("option chosen for reading level:"+reading_option)
+}
+
+//function for the reading level option
+function handleResultsPerPage(event) {
+    var dropdown = document.getElementById("results-per-page")
+    var results_option = dropdown.options[dropdown.selectedIndex].value
+    console.log("option chosen for number of results:"+ results_option)
+}
 
 //results_per_page_field.addEventListener()
 
@@ -40,7 +43,7 @@ const displayResults = (searchString) => {
     search_bar.style.marginBottom = "0px";//search results box styling
 
     //calls the search function to return the array of matching restaurant objects
-    let RestaurantObjects = search(searchString);
+    //let RestaurantObjects = search(searchString);
 
     //iterate through all values of the results
     //add new elements representing each restaurant

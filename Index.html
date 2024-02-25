@@ -21,9 +21,6 @@
     <!-- the rel keycword specifies the link category, the href keyword is the actual link-->
 </head>
 
-
-
-
 <body>               <!--body tag: there can only be one per html file and shows the items on the website-->
 
     <header> <!--Semantic element. header usually encompasses the starting sentence-->
@@ -39,22 +36,24 @@
         <h3>Select the desired reading level and  the number of results to display</h1>
         
 
-        <SELECT id="reading-level">
-            
+        <SELECT id="reading-level" onchange="handleReadingOptions()">
             <OPTION Value="Basic">Basic Knowledge</OPTION>
             <OPTION Value="Intermediate">Intermediate</OPTION>
             <OPTION Value="Advanced">Research Level</OPTION>
-            
         </SELECT>
 
-        <SELECT id="results-per-page">
+        <SELECT id="results-per-page" onchange="handleResultsPerPage()">
             <OPTION Value="5">5</OPTION>
             <OPTION Value="20">20</OPTION>
             <OPTION Value="100">100</OPTION>
-        </SELECT>            
+        </SELECT>
 
         <h3>Search a result</h1>
         
+<!-- 
+        <script async src="https://cse.google.com/cse.js?cx=e4d582333695544f8">
+        </script>
+        <div class="gcse-search"></div> -->
 
         <div class='search-input'>
             <label for='search-bar'>Enter</label>
@@ -68,7 +67,9 @@
     </section>
 
 
-    <script src="getData.js"></script>
+    <!-- 
+        <script  src="getData.js"></script>
+     -->
     <script src="main.js"></script>
 </body>
 </html>
