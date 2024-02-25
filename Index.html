@@ -1,6 +1,7 @@
-<!DOCTYPE html>              <!--header file basics-->
+<!DOCTYPE html>             <!--header file basics-->
 <html lang="en">     <!--The html tag includes all parts of the website the subtag sets html language to english-->
 
+<!-- using npm live-server for best results--->
 
 <head>  <!--The head section of a html file is very important. Links (equivalent of imports) are put here, along with the tab title-->
     <meta charset="UTF-8">
@@ -29,20 +30,20 @@
         
 
     <section id='main'> <!--Semantic element-->            
-        <p>This is a search result summarizer for different reading levels
+        <p>This is a search result summarizer for different reading levels.
         This allows the user to filter out search result. 
         </p>
 
         <h3>Select the desired reading level and  the number of results to display</h1>
         
 
-        <SELECT id="reading-level" onchange="handleReadingOptions()">
+        <SELECT id="reading-level">
             <OPTION Value="Basic">Basic Knowledge</OPTION>
             <OPTION Value="Intermediate">Intermediate</OPTION>
             <OPTION Value="Advanced">Research Level</OPTION>
         </SELECT>
 
-        <SELECT id="results-per-page" onchange="handleResultsPerPage()">
+        <SELECT id="results-per-page">
             <OPTION Value="5">5</OPTION>
             <OPTION Value="20">20</OPTION>
             <OPTION Value="100">100</OPTION>
@@ -57,7 +58,7 @@
 
         <div class='search-input'>
             <label for='search-bar'>Enter</label>
-            <input type='text' name='search' id='search-bar' placeholder="search here..." onkeydown="handleEnter(event)"> <!--search bar input-->
+            <input type='text' name='search' id='search-bar' placeholder="search here..."> <!--search bar input-->
         </div>
 
         
@@ -66,10 +67,8 @@
         <!--search and link to a database of restaurants (simplified using a csv file) is established using code involving javascript and json-->
     </section>
 
-
-    <!-- 
-        <script  src="getData.js"></script>
-     -->
     <script src="main.js"></script>
+    <script type="module" src="getData.js"></script>
+    
 </body>
 </html>

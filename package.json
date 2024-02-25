@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha"
   },
+  "live": "nodemon server.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
