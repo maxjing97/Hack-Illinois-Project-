@@ -20,7 +20,11 @@
       
     <!-- Links are imports to stylesheets and other resources in an html file-->
     <!-- the rel keycword specifies the link category, the href keyword is the actual link-->
+
+    <script src="main.js"></script>
+    <script type="module" src="getData.js"></script>
 </head>
+
 
 <body>               <!--body tag: there can only be one per html file and shows the items on the website-->
 
@@ -37,13 +41,13 @@
         <h3>Select the desired reading level and  the number of results to display</h1>
         
 
-        <SELECT id="reading-level">
+        <SELECT id="reading-level" onchange="handleReadingOptions(event)">
             <OPTION Value="Basic">Basic Knowledge</OPTION>
             <OPTION Value="Intermediate">Intermediate</OPTION>
             <OPTION Value="Advanced">Research Level</OPTION>
         </SELECT>
 
-        <SELECT id="results-per-page">
+        <SELECT id="results-per-page" onchange="handleResultsPerPage(event)">
             <OPTION Value="5">5</OPTION>
             <OPTION Value="20">20</OPTION>
             <OPTION Value="100">100</OPTION>
@@ -58,7 +62,7 @@
 
         <div class='search-input'>
             <label for='search-bar'>Enter</label>
-            <input type='text' name='search' id='search-bar' placeholder="search here..."> <!--search bar input-->
+            <input type='text' name='search' id='search-bar' placeholder="search here..." onkeydown="handleEnter(event)"> <!--search bar input-->
         </div>
 
         
@@ -67,8 +71,7 @@
         <!--search and link to a database of restaurants (simplified using a csv file) is established using code involving javascript and json-->
     </section>
 
-    <script src="main.js"></script>
-    <script type="module" src="getData.js"></script>
+
     
 </body>
 </html>

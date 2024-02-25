@@ -1,14 +1,15 @@
 // api key: AIzaSyCpsTND0xQbp5xb44bs2F2v-GWaYsb4DAI
 // custom search engine ID: e4d582333695544f8
 
-const axios = require('./node_modules/axios')
+
+import axios from './node_modules/axios';
 
 const api_key = "AIzaSyCpsTND0xQbp5xb44bs2F2v-GWaYsb4DAI";
 const engine_id = "e4d582333695544f8";
 
 
 //function to search the json object returned. Returns an array of matching restaurant objects.
-function search (searchString) {
+export function search (searchString) {
   const query = searchString.toLowerCase().trim(); //makes the search string actually used all lowercase and removed of trailing or leading spaces.
   let results = []; //initializes a results array;
 

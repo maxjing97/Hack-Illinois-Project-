@@ -8,9 +8,9 @@ const results_per_page_options = document.getElementById("results-per-page");
 
 var results_per_page = 10;
 
+// import { search } from "./getData.js";
 
 //function for the search bar
-search_bar.addEventListener("onkeydown", handleEnter)
 
 function handleEnter(event) {
     let searchString = event.target.value; //returns the value put into the search string
@@ -21,7 +21,6 @@ function handleEnter(event) {
     }
 }
 
-reading_level_option_button.addEventListener("onchange", handleReadingOptions)
 //function for the reading level option
 function handleReadingOptions(event) {
     var dropdown = document.getElementById("reading-level")
@@ -31,7 +30,6 @@ function handleReadingOptions(event) {
 }
 
 
-results_per_page_options.addEventListener("onchange", handleResultsPerPage)
 //function for the reading level option
 function handleResultsPerPage(event) {
     var dropdown = document.getElementById("results-per-page")
